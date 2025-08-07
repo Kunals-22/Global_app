@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_a</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>If A is true, B is visible</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    //Type appropriate comment here, and begin script below
+    g_form.setVisible('u_b', false);
+    g_form.setVisible('u_c', false);
+
+    if (g_form.getValue('u_a') == 'true') {
+        g_form.setVisible('u_b', true);
+    }
+	else if(g_form.getValue('u_a') == 'false'){
+		g_form.clearValue('u_a');
+		g_form.clearValue('u_b');
+		g_form.clearValue('u_c');
+        g_form.setReadOnly('u_b', false);
+		g_form.setVisible('u_b', false);
+		g_form.setVisible('u_c', false);
+	}
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-06-24 08:05:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>72548ec283d62210108dc020feaad3df</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>If A is true, B is visible</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="test global 2">64c65f73834b2210108dc020feaad311</sys_scope>
+        <sys_update_name>sys_script_client_72548ec283d62210108dc020feaad3df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-07 06:37:07</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="test global 2">64c65f73834b2210108dc020feaad311</claim_owner_scope>
+        <claim_timestamp>198833f68420000001</claim_timestamp>
+        <metadata_update_name>sys_script_client_72548ec283d62210108dc020feaad3df</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>test global 2</previous_claim_name>
+        <previous_claim_scope>64c65f73834b2210108dc020feaad311</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-08-07 06:37:07</sys_created_on>
+        <sys_id>44f7909c83532210108dc020feaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-08-07 06:37:07</sys_updated_on>
+    </sys_claim>
+</record_update>
